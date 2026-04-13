@@ -5,6 +5,7 @@
 !.gitignore
 !.zshrc
 !.config/
+!screenshots/
 
 # Allow only relevant .config subdirectories
 !.config/i3/
@@ -27,6 +28,7 @@
 !.config/ranger/**
 !.config/fastfetch/
 !.config/fastfetch/**
+!README.md
 
 # Ignore everything else inside .config
 .config/a2j

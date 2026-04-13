@@ -6,6 +6,7 @@
 !.zshrc
 !.config/
 !screenshot/
+!screenshot/*
 
 # Allow only relevant .config subdirectories
 !.config/i3/

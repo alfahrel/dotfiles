@@ -30,6 +30,7 @@
 !.config/fastfetch/
 !.config/fastfetch/**
 !README.md
+!LICENSE
 
 # Ignore everything else inside .config
 .config/a2j

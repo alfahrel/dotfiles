@@ -175,7 +175,7 @@ bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+q kill
 
 # super + L lock screen
-bindsym $mod+Shift+l exec --no-startup-id ~/.config/i3/scripts/lock.sh
+bindsym $mod+l exec --no-startup-id ~/.config/i3/scripts/lock.sh
 
 # add gaps between windows
 gaps inner 10

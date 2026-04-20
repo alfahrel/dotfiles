@@ -1,0 +1,196 @@
+/* === Global === */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #e0def4;
+  padding: 3px 6px;
+  margin: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* === Hidden Waybar === */
+window#waybar.hidden {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+/* === Workspaces === */
+#workspaces {
+  background: #1e1e2e;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+#workspaces button {
+  color: #7f849c;
+  background: transparent;
+  padding: 2px 8px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: white;
+  color: #1e1e2e;
+}
+
+#workspaces button.active {
+  background: black;
+  color: white;
+}
+
+#workspaces button.active:hover {
+  background: white;
+  color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+  background: #f38ba8;
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
+/* === Window Title === */
+#window {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 2px 12px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* === Clock & Weather (Reversed Clock) === */
+#custom-weather {
+  background: rgba(40, 40, 55, 0.7);
+  border-radius: 3px;
+  color: #f5e0dc;
+  padding: 2px 6px;
+  font-weight: 600;
+}
+
+#clock,
+#custom-weather {
+  background: #1e1e2e;
+  border-radius: 3px;
+  color: white;
+  padding: 2px 12px;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+/* === Modules Right === */
+#memory,
+#battery,
+#backlight,
+#network,
+#custom-torstatus,
+#pulseaudio,
+#bluetooth,
+#custom-screenshot,
+#custom-power,
+#custom-vpn,
+#custom-cpugraph,
+#custom-internetspeed,
+#tray {
+  background: #1e1e2e;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 2px 12px;
+  margin-left: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* === Individual Background Colors (reversed) === */
+#memory {
+  color: #f9e2af;
+}
+#network {
+  color: #89dceb;
+}
+#custom-torstatus {
+  color: #89dceb;
+}
+#bluetooth {
+  color: #94e2d5;
+}
+#backlight {
+  color: #a6e3a1;
+}
+#battery {
+  color: #a6e3a1;
+}
+#pulseaudio {
+  color: #f5c2e7;
+}
+#custom-screenshot {
+  color: #89b4fa;
+}
+#custom-power {
+  color: white;
+}
+#custom-vpn {
+  color: white;
+}
+#custom-cpugraph {
+  color: #a6e3a1;
+}
+#custom-internetspeed {
+  color: #f5c2e7;
+}
+#custom-power {
+  border-radius: 3px;
+  padding: 2px 11px 2px 8px;
+}
+
+/* === Battery States === */
+#battery.warning:not(.charging) {
+  background: #fab387;
+  color: #1e1e2e;
+}
+#battery.critical:not(.charging) {
+  background: #f38ba8;
+  color: #1e1e2e;
+  animation: blink 0.6s ease-in-out infinite alternate;
+}
+
+/* === Tray === */
+#tray {
+  border: 1px solid rgba(150, 150, 180, 0.25);
+  border-radius: 3px;
+  padding: 2px 5px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+#tray:hover {
+  border-color: #cba6f7;
+}
+
+/* === Tooltip === */
+tooltip {
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 3px;
+}
+tooltip label {
+  color: #cdd6f4;
+}
+
+/* === Animations === */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

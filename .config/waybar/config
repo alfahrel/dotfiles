@@ -1,0 +1,171 @@
+{
+  "style": "/home/rel/.config/waybar/style-current.css",
+  "layer": "top",
+  "position": "top",
+  "height": 25,
+  "spacing": 1,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio","battery","bluetooth","backlight","network","custom/torstatus","custom/vpn","memory","custom/cpugraph","tray","custom/power"],
+
+  "custom/weather": {
+        "exec": "~/.config/waybar/weather.sh",
+        "return-type": "json",
+        "interval": 1800,
+	"restart-interval": 60,
+        "format": "{}"
+    },
+
+    "custom/torstatus": {
+        "exec": "~/.config/waybar/tor-status.sh",
+	"return-type": "json",
+    	"interval": 5,
+    	"on-click": "~/.config/waybar/tor-status.sh toggle",
+    	"format": "{}",
+    	"tooltip": true
+    },
+
+  "custom/internetspeed": {
+        "format": "{}",
+        "exec": "$HOME/.config/waybar/internet-speed.sh",
+        "return-type": "json",
+	"interval":2,
+   },
+
+   "custom/cpugraph": {
+        "exec": "~/.config/waybar/cpu-graph.sh",
+        "return-type": "json",
+        "interval": 2,
+        "format": "{}"
+    },
+
+  "memory": {
+    "interval": 30,
+    "format": "󰍛 {percentage}%",
+    "max-length": 20,
+    "tooltip": false,
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/power-menu.sh"
+   },
+  
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format-icons": {
+      "1": "󰄯",
+      "2": "󰄯",
+      "3": "󰄯",
+      "4": "󰄯",
+      "5": "󰄯",
+      "6": "󰄯",
+      "7": "󰄯",
+      "8": "󰄯",
+      "9": "󰄯",
+      "10": "󰄯",
+      "urgent": "",
+      "focused": "󰮯",
+      "default": "󰝥"
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Terminal": " Terminal",
+      "(.*) - Kitty": " Terminal",
+      "^$": "Desktop",
+      "(.*)": "$1"
+    },
+    "separate-outputs": true,
+    "max-length": 30
+  },
+
+  "clock": {
+    "timezone": "Asia/Jakarta",
+    "format": "{:%d %B %Y • %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+ },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "󰃟 ",
+    "tooltip-format": "{percent}%",
+    "format-icons": ["󰃞", "󰃞", "󰃞", "󰃞", "󰃞", "󰃞", "󰃞", "󰃞", "󰃞"],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time}",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰁹"]
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈁",
+    "tooltip-format-wifi": "{essid}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "max-length": 7,
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "custom/vpn": {
+        "format": "{}",
+        "exec": "~/.config/waybar/vpn-status.sh",
+        "interval": 5,
+        "on-click": "~/.config/waybar/vpn-toggle.sh",
+        "return-type": "json",
+        "tooltip": true
+    },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-connected": "󰂯",
+    "format-connected-battery": "󰂯 {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "max-length": 10,
+    "on-click-right": "rfkill toggle bluetooth"
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-bluetooth": "  {volume}%",
+    "format-bluetooth-muted": "󰝟",
+    "format-muted": "󰝟",
+    "format-source": "{volume}%",
+    "format-source-muted": "󰝟",
+    "on-click": "pavucontrol"
+  },
+
+  "tray": {
+    "spacing": 3
+  },
+
+  "custom/screenshot": {
+    "format": "PrtSc",
+    "tooltip": "Screenshot",
+    "on-click": "grimblast copy area"
+  }
+}
+

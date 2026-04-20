@@ -29,7 +29,9 @@
 !.config/ranger/**
 !.config/fastfetch/
 !.config/fastfetch/**
+!.config/waybar/
 !.config/waybar/**
+!.config/hypr/
 !.config/hypr/**
 !README.md
 !LICENSE

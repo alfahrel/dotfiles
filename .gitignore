@@ -29,10 +29,6 @@
 !.config/ranger/**
 !.config/fastfetch/
 !.config/fastfetch/**
-!.config/waybar/
-!.config/waybar/**
-!.config/hypr/
-!.config/hypr/**
 !README.md
 !LICENSE
 
@@ -65,6 +61,7 @@
 .config/guitarix
 .config/guvcview2
 .config/htop
+.config/hypr
 .config/inkscape
 .config/jack
 .config/libreoffice
@@ -100,6 +97,7 @@
 .config/user-dirs.locale
 .config/VSCodium
 .config/waypaper
+.config/waybar
 .config/weechat
 .config/wintc
 .config/wofi

@@ -2,7 +2,7 @@
 
 My personal dotfiles for i3 on Arch Linux.
 
-![screenshot](screenshot/preview.webp)
+![screenshot](Screenshot/preview.png)
 
 ## Setup
 

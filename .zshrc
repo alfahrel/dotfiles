@@ -110,5 +110,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Alias
+alias vim="nvim"
+alias jam='tty-clock -c -C 7 -s -b'
+alias copy='xclip -selection clipboard <'
+alias copygit='xclip -selection clipboard < ~/Personal/.git-cred'
+alias ls='lsd -l --date relative --color always'
+alias la='lsd -la --date relative --color always'
+
 # Autostart
 fastfetch
+echo ""

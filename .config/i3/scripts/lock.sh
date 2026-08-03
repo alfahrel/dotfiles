@@ -20,7 +20,7 @@ RINGWRONGCOLOR="00000000"
 RINGTEXTSIZE=14
 RINGRADIUS=45
 
-i3lock -t -i $HOME/.config/i3/scripts/sunrise.jpg -knf --force-clock \
+i3lock -t -i $HOME/.config/i3/scripts/black.jpg -knf --force-clock \
 --time-color="$TIMECOLOR" --layout-align 1 --time-align 1 \
 --time-font="$TIMEFONT" --date-color="$DATECOLOR" --time-pos="x+120:h-95" \
 --date-size="$DATESIZE" --time-size="$TIMESIZE" --date-str="$DATESTYLE" -e \
@@ -33,3 +33,4 @@ i3lock -t -i $HOME/.config/i3/scripts/sunrise.jpg -knf --force-clock \
 --modif-size=1  --time-str="$TIMESTYLE" --verif-text="" --wrong-text=""
 # --indicator circle does not disappear
 # $HOME/.rand_bg.png
+

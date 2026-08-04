@@ -144,7 +144,8 @@
 .jackdrc
 .java
 .librewolf
-.local
+.local/share/
+.local/state/
 .lock-personal
 .log
 .lyrics

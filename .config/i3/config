@@ -42,12 +42,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
 
 # the one i added
 # set the wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wp2903909-pink-floyd-dark-side-of-the-moon-wallpaper.png
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/nighthawks.jpg
 
 # picom
 exec --no-startup-id picom
 
 exec --no-startup-id xset s off -dpms
+
+exec --no-startup-id kitty
+
+exec --no-startup-id brightnessctl set 20%-
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

@@ -85,7 +85,6 @@ require("lazy").setup({
 		config = function()
 			require("Comment").setup()
 
-			-- Toggle Comment (Ctrl+;)
 			vim.keymap.set("n", "<C-;>", function()
 				require("Comment.api").toggle.linewise.current()
 			end, { desc = "Toggle comment" })

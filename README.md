@@ -12,6 +12,7 @@ My personal dotfiles for i3.
 - **Launcher**: dmenu
 - **Wallpaper**: feh
 - **Font**: JetBrainsMono Nerd Font
+- **Volume Control**:pavucontrol
 
 ## Features
 

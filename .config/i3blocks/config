@@ -28,6 +28,11 @@ command=MUTED=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o 'yes'); VOL=$(pactl
 interval=1
 markup=pango
 
+[pavucontrol]
+full_text=Pavucontrol
+command=~/.config/i3blocks/scripts/volume-click.sh
+color=#cbefe9
+
 [brightness]
 command=echo "<span color='#f9e2af'> 󰃟 $(($(brightnessctl get) * 100 / $(brightnessctl max)))% </span>"
 interval=1

@@ -22,6 +22,7 @@ My personal dotfiles for i3.
 - Screenshot with maim (PrtSc to copy area to clipboard)
 - Alt+Tab to cycle workspaces
 - Super+Space to open dmenu
+- To change wallpaper, put the image in `~/Pictures/wallpapers`
 
 ## Install
 

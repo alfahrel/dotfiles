@@ -1,60 +1,29 @@
--- ============================================================================
--- EDITOR OPTIONS
--- ============================================================================
-
--- Mouse and Selection
 vim.opt.mouse = "a"
 vim.opt.keymodel = "startsel,stopsel"
 vim.opt.selectmode = "mouse,key"
-
--- UI Display
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.background = "dark"
-
--- Navigation
 vim.opt.whichwrap:append("<,>,[,]")
-
--- Transparent Background
 vim.api.nvim_set_hl(0, "Normal", { bg = nil })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = nil })
-
--- ============================================================================
--- KEYMAPS - STANDARD EDITOR SHORTCUTS
--- ============================================================================
-
--- Copy (Ctrl+C)
 vim.keymap.set("v", "<C-c>", '"+y<Esc>', { desc = "Copy" })
 vim.keymap.set("n", "<C-c>", '"+yy', { desc = "Copy line" })
 vim.keymap.set("i", "<C-c>", '<Esc>"+yyi', { desc = "Copy line" })
-
--- Cut (Ctrl+X)
 vim.keymap.set("n", "<C-x>", '"+dd', { desc = "Cut line" })
 vim.keymap.set("i", "<C-x>", '<Esc>"+ddi', { desc = "Cut line" })
 vim.keymap.set("v", "<C-x>", '"+d', { desc = "Cut selection" })
-
--- Paste (Ctrl+V)
 vim.keymap.set("i", "<C-v>", "<C-r>+", { desc = "Paste from clipboard" })
 vim.keymap.set("c", "<C-v>", "<C-r>+", { desc = "Paste in command mode" })
-
--- Select All (Ctrl+A)
 vim.keymap.set("n", "<C-a>", "gggH<C-o>G", { desc = "Select all" })
 vim.keymap.set("i", "<C-a>", "<Esc>gggH<C-o>G", { desc = "Select all" })
-
--- Undo (Ctrl+Z)
 vim.keymap.set("n", "<C-z>", "u", { desc = "Undo" })
 vim.keymap.set("i", "<C-z>", "<C-o>u", { desc = "Undo" })
-
--- Redo (Ctrl+Y)
 vim.keymap.set("n", "<C-y>", "<C-r>", { desc = "Redo" })
 vim.keymap.set("i", "<C-y>", "<C-o><C-r>", { desc = "Redo" })
-
--- ============================================================================
--- LAZY.NVIM PLUGIN MANAGER SETUP
--- ============================================================================
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -67,15 +36,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- ============================================================================
--- PLUGINS
--- ============================================================================
-
 require("lazy").setup({
-
-	-- ========================================================================
-	-- COLOR SCHEME - Tokyo Night
-	-- ========================================================================
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -89,9 +50,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- ========================================================================
-	-- FUZZY FINDER - Telescope
-	-- ========================================================================
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
@@ -99,19 +57,14 @@ require("lazy").setup({
 		config = function()
 			local builtin = require("telescope.builtin")
 			
-			-- File Navigation Keymaps
 			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
 			vim.keymap.set("n", "<C-r>", builtin.oldfiles, { desc = "Recent files" })
 			
-			-- Search Keymaps
 			vim.keymap.set("n", "<C-f>", builtin.live_grep, { desc = "Search in files" })
 			vim.keymap.set("n", "<C-/>", builtin.current_buffer_fuzzy_find, { desc = "Search in current file" })
 		end,
 	},
 
-	-- ========================================================================
-	-- AI COMPLETION - Supermaven
-	-- ========================================================================
 	{
 		"supermaven-inc/supermaven-nvim",
 		config = function()
@@ -127,9 +80,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- ========================================================================
-	-- COMMENTING - Comment.nvim
-	-- ========================================================================
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -153,15 +103,11 @@ require("lazy").setup({
 		end,
 	},
 
-	-- ========================================================================
-	-- CODE FORMATTING - Conform.nvim
-	-- ========================================================================
 	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
-					-- Web Development
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					javascriptreact = { "prettier" },
@@ -170,8 +116,6 @@ require("lazy").setup({
 					html = { "prettier" },
 					css = { "prettier" },
 					scss = { "prettier" },
-					
-					-- Data Formats
 					json = { "prettier" },
 					jsonc = { "prettier" },
 					yaml = { "prettier" },
@@ -179,15 +123,11 @@ require("lazy").setup({
 					graphql = { "prettier" },
 					xml = { "xmlformat" },
 					sql = { "sql_formatter" },
-					
-					-- Systems Programming
 					c = { "clang_format" },
 					cpp = { "clang_format" },
 					java = { "clang_format" },
 					rust = { "rustfmt" },
 					go = { "gofmt" },
-					
-					-- Scripting Languages
 					python = { "black" },
 					lua = { "stylua" },
 					ruby = { "rubocop" },
@@ -197,7 +137,6 @@ require("lazy").setup({
 				},
 			})
 
-			-- Format and Save (Ctrl+S)
 			vim.keymap.set({ "n", "v", "i" }, "<C-s>", function()
 				if vim.fn.mode() == "i" then
 					vim.cmd("stopinsert")

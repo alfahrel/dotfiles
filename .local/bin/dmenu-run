@@ -1,0 +1,13 @@
+#!/bin/bash
+
+apps=$(dmenu_path 2>/dev/null | tr '[:upper:]' '[:lower:]' | grep -vE '^(poweroff|reboot|suspend|halt)$')
+
+choice=$(printf "poweroff\nreboot\nsuspend\nhalt\n%s" "$apps" | dmenu -p "Run:" | tr '[:upper:]' '[:lower:]')
+
+case "$choice" in
+    poweroff)  sudo /usr/bin/poweroff ;;
+    reboot)    sudo /usr/bin/reboot ;;
+    suspend)   sudo /usr/bin/zzz ;;
+    halt)      sudo /usr/bin/halt ;;
+    *)         choice=$(echo "$choice" | tr -d '\r'); setsid "$choice" & ;;
+esac

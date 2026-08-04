@@ -30,6 +30,7 @@
 !.config/fastfetch/
 !.config/fastfetch/**
 !.config/picom.conf
+!.local/
 !.local/bin/
 !.local/bin/**
 !README.md
@@ -150,7 +151,7 @@
 .log
 .lyrics
 .mutt
-.muttrc
+.muttrchttps://hashtagaja.my.id/
 .nb
 .nbrc
 .newsboat

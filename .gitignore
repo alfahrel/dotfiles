@@ -29,6 +29,9 @@
 !.config/ranger/**
 !.config/fastfetch/
 !.config/fastfetch/**
+!.config/picom.conf
+!.local/bin/
+!.local/bin/**
 !README.md
 !LICENSE
 !Script/

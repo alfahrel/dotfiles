@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $PATH /home/rel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
-exec --no-startup-id export PATH="/home/rel/.local/bin:$PATH"
+set $PATH /home/elrifa/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+exec --no-startup-id export PATH="/home/elrifa/.local/bin:$PATH"
 
 set $mod Mod4
 
@@ -66,7 +66,8 @@ bindsym $mod+Return exec kitty
 # bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run
+# bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+space exec ~/.local/bin/dmenu-run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -232,7 +233,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     status_command i3blocks
-    font pango:JetBrainsMono Nerd Font 10
+    font pango:JetBrainsMono Nerd Font 9
 
     colors {
         background #1e1e2e

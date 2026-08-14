@@ -65,20 +65,21 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"supermaven-inc/supermaven-nvim",
-		config = function()
-			require("supermaven-nvim").setup({
-				color = {
-					suggestion_color = "#808080",
-					cterm = 244,
-				},
-			})
-		end,
-		init = function()
-			vim.g.supermaven_disable_activation_messages = true
-		end,
-	},
+	--
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({
+	-- 			color = {
+	-- 				suggestion_color = "#808080",
+	-- 				cterm = 244,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	init = function()
+	-- 		vim.g.supermaven_disable_activation_messages = true
+	-- 	end,
+	-- },
 
 	{
 		"numToStr/Comment.nvim",

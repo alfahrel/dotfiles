@@ -120,7 +120,5 @@ alias la='lsd -la --date relative --color always'
 alias whereami='~/Script/ip-locator.sh'
 
 # Autostart
-echo ""
 fastfetch
-echo ""
 export PATH="$HOME/.local/bin:$PATH"

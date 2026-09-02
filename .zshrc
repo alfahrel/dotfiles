@@ -118,7 +118,11 @@ alias copygit='xclip -selection clipboard < ~/Personal/.git-cred'
 alias ls='lsd -l --date relative --color always'
 alias la='lsd -la --date relative --color always'
 alias whereami='~/Script/ip-locator.sh'
+#alias clear="pyroclear"
 
 # Autostart
 fastfetch
+
+# Export goes here
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
